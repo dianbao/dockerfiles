@@ -5,10 +5,9 @@
 
 FROM frolvlad/alpine-glibc
 MAINTAINER Resilio Inc. <support@resilio.com>
-LABEL com.resilio.version="2.5.7"
 
 RUN apk --no-cache --update add bash
-ADD https://download-cdn.resilio.com/2.5.7/linux-x64/resilio-sync_x64.tar.gz /tmp/sync.tgz
+ADD https://download-cdn.resilio.com/stable/linux-x64/resilio-sync_x64.tar.gz /tmp/sync.tgz
 RUN tar -xf /tmp/sync.tgz -C /usr/bin rslsync && rm -f /tmp/sync.tgz
 
 COPY sync.conf.default /etc/
