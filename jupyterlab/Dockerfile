@@ -6,8 +6,8 @@ RUN conda install --quiet --yes 'nodejs' 'phantomjs' \
     && python3 -m ipykernel install --user \
     && python3 -m bash_kernel.install --user \
     && install_c_kernel --user \
-    && jupyter labextension install --no-build jupyterlab-drawio \
-    && jupyter labextension install --no-build @mflevine/jupyterlab_html \
+    # && jupyter labextension install --no-build jupyterlab-drawio \
+    # && jupyter labextension install --no-build @mflevine/jupyterlab_html \
     && jupyter lab build \
     && conda clean -tipsy \
     && npm cache clean --force \

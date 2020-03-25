@@ -3,9 +3,9 @@ FROM malexandre/gae:python
 # TODO: [gcloud](https://cloud.google.com/appengine/docs/standard/python/quickstart)
 
 RUN echo "https://mirrors.ustc.edu.cn/alpine/v3.5/main" > /etc/apk/repositories \
-    && apk add --update --no-cache git \
+    && apk add --update --no-cache git openssh-client \
     && mkdir -p /code && cd /code \
-    && git clone --recursive https://github.com/sympy/sympy-live.git \
+    && git clone --depth 1 --recursive https://github.com/sympy/sympy-live.git \
     && rm -rf sympy-live/.git
 
 FROM malexandre/gae:python
